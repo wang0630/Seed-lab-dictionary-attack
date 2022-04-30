@@ -33,7 +33,6 @@ class CipherPair {
     unsigned char ciphertext[32];
 
     ResultCipher aesEncrypt(const unsigned char* key) {
-        int f_len = 0;
         // Length of the plain text, in this case is 21 bytes long
         int plaintext_len = strlen((char*)this->plaintext);
 
@@ -190,7 +189,7 @@ int main(int argc, char* argv[])
     cin >> cipherText;
     cout << "Enter iv: " << endl;
     cin >> iv;
-//    return 0;
+
     // read word from dictionary
     string dictionaryPath = "./words.txt";
 
