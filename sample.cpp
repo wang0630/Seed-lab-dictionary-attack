@@ -13,14 +13,22 @@ struct ResultCipher {
     int totalWrittenBufferLen;
 };
 
+/* Test sample 1:
+ * iv = "aabbccddeeff00998877665544332211"
+ * cipher text: "764aa26b55a4da654df6b19e4bce00f4ed05e09346fb0e762583cb7da2ac93a2"
+ * answer: Syracuse
+ *
+ * Test sample 2:
+ * iv = "010203040506070809000a0b0c0d0e0f"
+ * cipher text: "e5accdb667e8e569b1b34f423508c15422631198454e104ceb658f5918800c22"
+ * answer: example
+ * */
+
+
 class CipherPair {
   private:
     EVP_CIPHER_CTX* en{};
-//    const unsigned char *iv = "aabbccddeeff00998877665544332211";
-//    unsigned char iv[16] = { 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff, 0x00, 0x99, 0x88, 0x77, 0x66,
-//                             0x55, 0x44, 0x33, 0x22, 0x11 };
     unsigned char* plaintext = (unsigned char *) "This is a top secret.";
-//    string ciphertextInHex = "764aa26b55a4da654df6b19e4bce00f4ed05e09346fb0e762583cb7da2ac93a2";
     unsigned char iv[16];
     unsigned char ciphertext[32];
 
